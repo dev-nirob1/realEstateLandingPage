@@ -1,5 +1,4 @@
 <script setup>
-import BaseButton from '@/components/element/BaseButton.vue';
 import BaseImage from '@/components/element/BaseImage.vue';
 import ListItem from '@/components/element/ListItem.vue';
 import { onMounted, ref } from 'vue';
@@ -26,7 +25,7 @@ onMounted(() => {
     <div class="container">
       <nav class="flex justify-between align-center">
         <a href="#" class="logo">
-          <BaseImage image="https://scionassetbd.com/uploads/brands/logo-2.png" alt="logo" />
+          <BaseImage image="https://scionassetbd.com/uploads/brands/logo.png" alt="logo" />
         </a>
 
         <ul class="nav-links" :class="{ 'active': isMenuOpen }">
@@ -65,6 +64,9 @@ onMounted(() => {
 <style scoped>
 .navbar {
   padding: .75rem 0;
+  background: var(--white-color);
+  color: var(--dark-color);
+
 }
 
 .container {
@@ -72,7 +74,7 @@ onMounted(() => {
 }
 
 .container.scrolling {
-  background: var(--dark-color);
+  background: var(--white-color);
   border-radius: 1rem;
   position: fixed;
   top: 0;
@@ -93,7 +95,6 @@ onMounted(() => {
 }
 
 .nav-links {
-  color: var(--white-color);
   background: var(--dark-color);
   padding: 1rem 0;
   display: flex;

@@ -8,12 +8,12 @@ import SubTitle from '@/components/element/SubTitle.vue';
 </script>
 <template>
   <!-- ======== Footer section ======== -->
-  <footer class="footer bg-dark text-white">
+  <footer class="footer">
     <div class="container medium-2 large-3 gap-2 py-1 medium-py-4">
       <!-- Footer logo and contact info -->
       <div class="contact-info">
         <a href="/" class="logo">
-          <BaseImage image="https://scionassetbd.com/uploads/brands/logo-2.png" alt="Real Estate Logo" />
+          <BaseImage image="https://scionassetbd.com/uploads/brands/logo.png" alt="Real Estate Logo" />
         </a>
 
         <BaseParagraph>
@@ -75,11 +75,8 @@ import SubTitle from '@/components/element/SubTitle.vue';
 
 <style scoped>
 .footer {
-  color: var(--white-color);
-  background:
-    linear-gradient(rgb(from var(--dark-color) r g b / 97%),
-      rgb(from var(--dark-color) r g b / 97%)),
-    url('https://cdn.pixabay.com/photo/2023/04/12/00/08/lineart-7918516_1280.jpg') center / cover no-repeat;
+  color: var(--dark-color);
+
 }
 
 .footer .logo img {
