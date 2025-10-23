@@ -1,4 +1,7 @@
 <script setup>
+import BaseButton from '@/components/element/BaseButton.vue';
+import BaseImage from '@/components/element/BaseImage.vue';
+import ListItem from '@/components/element/ListItem.vue';
 import { onMounted, ref } from 'vue';
 
 const isMenuOpen = ref(false);
@@ -23,8 +26,9 @@ onMounted(() => {
     <div class="container">
       <nav class="flex justify-between align-center">
         <a href="#" class="logo">
-          <BaseImage image="/logo-header.png" alt="logo" />
+          <BaseImage image="https://scionassetbd.com/uploads/brands/logo-2.png" alt="logo" />
         </a>
+
         <ul class="nav-links" :class="{ 'active': isMenuOpen }">
           <ListItem class="mobile-logo">
             <a href="#" class="logo">
@@ -43,26 +47,11 @@ onMounted(() => {
           <ListItem>
             <a href="#contact">Contact</a>
           </ListItem>
+          <ListItem>
+            <i class="fa-solid fa-phone"></i> +8801234567890
+          </ListItem>
         </ul>
 
-        <div class="dropdown-menu relative">
-          <BaseButton class="width-full height-full">
-            <!-- <i class="fa-solid fa-user"></i> -->
-            <BaseImage image="https://randomuser.me/api/portraits/men/32.jpg" alt="image" />
-          </BaseButton>
-
-          <ul class="dropdown">
-            <ListItem>
-              <a href="#dashboard/profile">Profile</a>
-            </ListItem>
-            <ListItem>
-              <a href="#dashboard">Dashboard</a>
-            </ListItem>
-            <ListItem>
-              <BaseButton>Logout</BaseButton>
-            </ListItem>
-          </ul>
-        </div>
 
         <div @click="handleHamburger" class="hamburger flex-center">
           <i :class="isMenuOpen ? 'fas fa-xmark' : 'fas fa-bars'" class="fa-2xl"></i>
@@ -206,6 +195,7 @@ onMounted(() => {
     width: fit-content;
     background: transparent;
     flex-direction: row;
+    align-items: center;
   }
 
   li a.router-link-exact-active {

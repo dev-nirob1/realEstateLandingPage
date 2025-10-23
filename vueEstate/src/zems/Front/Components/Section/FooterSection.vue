@@ -1,18 +1,24 @@
 <script setup>
+import BaseButton from '@/components/element/BaseButton.vue';
+import BaseImage from '@/components/element/BaseImage.vue';
+import BaseParagraph from '@/components/element/BaseParagraph.vue';
+import InputField from '@/components/element/InputField.vue';
+import ListItem from '@/components/element/ListItem.vue';
+import SubTitle from '@/components/element/SubTitle.vue';
 </script>
 <template>
   <!-- ======== Footer section ======== -->
   <footer class="footer bg-dark text-white">
-    <div class="container medium-2 large-4 gap-2 py-1 medium-py-4">
+    <div class="container medium-2 large-3 gap-2 py-1 medium-py-4">
       <!-- Footer logo and contact info -->
       <div class="contact-info">
         <a href="/" class="logo">
-          <BaseImage image="/logo-header.png" alt="Real Estate Logo" />
+          <BaseImage image="https://scionassetbd.com/uploads/brands/logo-2.png" alt="Real Estate Logo" />
         </a>
 
         <BaseParagraph>
           We connect buyers and sellers with trusted real estate solutions.
-          From dream homes to investment properties, we make every transaction simple and transparent.
+          From dream homes to investment.
         </BaseParagraph>
 
         <div class="social-links">
@@ -31,47 +37,20 @@
 
       <!-- Quick navigation links -->
       <div>
-        <SubTitle>Quick Links</SubTitle>
+        <SubTitle>Contact Us</SubTitle>
         <ul class="footer-links">
           <ListItem>
-            <a href="#about">About Us</a>
+            <i class="fa-solid fa-location-dot"></i> 123 Business Centre London SW1A 1AA
           </ListItem>
           <ListItem>
-            <a href="#properties">All Properties</a>
+            <i class="fa-solid fa-phone"></i> +8801234567890
           </ListItem>
           <ListItem>
-            <a href="">Our Agents</a>
-          </ListItem>
-          <ListItem>
-            <a href="">Blog</a>
-          </ListItem>
-          <ListItem>
-            <a href="#">Contact Us</a>
+            <i class="fa-solid fa-envelope"></i> realestate@gmail.com
           </ListItem>
         </ul>
       </div>
 
-      <!-- Support / Resources -->
-      <div>
-        <SubTitle>Resources</SubTitle>
-        <ul class="footer-links">
-          <ListItem>
-            <a href="">Buyer’s Guide</a>
-          </ListItem>
-          <ListItem>
-            <a href="">Seller’s Guide</a>
-          </ListItem>
-          <ListItem>
-            <a href="">FAQ</a>
-          </ListItem>
-          <ListItem>
-            <a href="">Privacy Policy</a>
-          </ListItem>
-          <ListItem>
-            <a href="">Terms & Conditions</a>
-          </ListItem>
-        </ul>
-      </div>
 
       <!-- Newsletter section -->
       <div class="newsletter">
@@ -97,11 +76,9 @@
 <style scoped>
 .footer {
   color: var(--white-color);
-    background:
-    linear-gradient(
-      rgb(from var(--dark-color) r g b / 97%),
-      rgb(from var(--dark-color) r g b / 97%)
-    ),
+  background:
+    linear-gradient(rgb(from var(--dark-color) r g b / 97%),
+      rgb(from var(--dark-color) r g b / 97%)),
     url('https://cdn.pixabay.com/photo/2023/04/12/00/08/lineart-7918516_1280.jpg') center / cover no-repeat;
 }
 
