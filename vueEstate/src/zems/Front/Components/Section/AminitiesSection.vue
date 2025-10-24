@@ -1,31 +1,7 @@
-<template>
-  <section class="amenities">
-    <div class="container">
-      <h2 class="section-title">
-        World-Class <span>Amenities</span>
-      </h2>
-      <p class="section-subtitle">
-        Experience the art of fine living with facilities that redefine comfort and convenience.
-      </p>
-
-      <div class="amenities-grid">
-        <div class="amenity-card" v-for="(item, i) in amenities" :key="i">
-          <div class="icon">
-            <i :class="item.icon"></i>
-          </div>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.desc }}</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Floating shape for premium feel -->
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-  </section>
-</template>
-
 <script setup>
+import BaseParagraph from '@/components/element/BaseParagraph.vue';
+import SubTitle from '@/components/element/SubTitle.vue';
+
 const amenities = [
   {
     icon: 'fa-solid fa-water-ladder',
@@ -59,131 +35,54 @@ const amenities = [
   },
 ];
 </script>
+<template>
+  <section class="amenities">
+    <div class="container">
+      <div class="text-center mb-2">
+        <h2 class="section-title">
+        World-Class <span>Amenities</span>
+      </h2>
+      <p class="section-subtitle">
+        Experience the art of fine living with facilities that redefine comfort and convenience.
+      </p>
+      </div>
+
+      <div class="small-2 large-3 gap-1">
+        <div class="amenity-card relative" v-for="(item, i) in amenities" :key="i">
+          <div class="icon">
+            <i :class="item.icon" class="fa-3x"></i>
+          </div>
+          <SubTitle>{{ item.title }}</SubTitle>
+          <BaseParagraph>{{ item.desc }}</BaseParagraph>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
 
 <style scoped>
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
-
 .amenities {
-  position: relative;
-  padding: 6rem 8%;
-  background: #f8fdfb;
-  overflow: hidden;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #13443C;
-  font-weight: 700;
-}
-
-.section-title span {
-  color: #1abc9c;
-}
-
-.section-subtitle {
-  text-align: center;
-  color: #555;
-  margin-top: 0.8rem;
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin-inline: auto;
-  line-height: 1.6;
-}
-
-.amenities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-top: 4rem;
+  padding: 3.75rem 0;
 }
 
 .amenity-card {
-  background: white;
+  box-shadow: var(--box-shadow);
   padding: 2rem;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(19, 68, 60, 0.08);
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
+  border-radius: 1rem;
+  border-top: 2px solid transparent;
+  transition: .5s ease-in-out;
 }
 
-.amenity-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background: linear-gradient(90deg, #1abc9c, #13443C);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.amenity-card:hover::before {
-  opacity: 1;
-}
-
-.amenity-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 14px 40px rgba(19, 68, 60, 0.15);
-}
-
-.icon {
-  font-size: 2rem;
+.amenity-card .icon {
   color: #1abc9c;
-  margin-bottom: 1.2rem;
-}
-
-.amenity-card h3 {
-  color: #13443C;
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 0.6rem;
+  margin-bottom: .75rem;
 }
 
 .amenity-card p {
-  color: #555;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-.shape {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index:0;
+  margin: .75rem 0;
 }
 
-.shape-1 {
-  width: 280px;
-  height: 280px;
-  background: radial-gradient(circle at center, #1abc9c 0%, transparent 70%);
-  top: 8%;
-  left: -100px;
-  opacity: 0.3;
-  filter: blur(60px);
-}
-
-.shape-2 {
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle at center, #13443C 0%, transparent 70%);
-  bottom: -80px;
-  right: -120px;
-  opacity: 0.25;
-  filter: blur(80px);
-}
-/* Responsive */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-  .section-subtitle {
-    font-size: 1rem;
-  }
-  .amenity-card {
-    padding: 1.5rem;
-  }
+.amenity-card:hover {
+  border-top: 2px solid #1abc9c;
 }
 </style>

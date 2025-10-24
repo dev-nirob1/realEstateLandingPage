@@ -30,15 +30,10 @@ import SubTitle from '@/components/element/SubTitle.vue';
 <style scoped>
 .hero {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
   background: rgb(from var(--primary-color) r g b / 3%);
+  color: var(--white-color);
 }
 
-.hero .content {
-  max-width: 40%;
-  margin-left: 7rem;
-}
 .content span {
   color: #1abc9c;
 }
@@ -50,20 +45,35 @@ import SubTitle from '@/components/element/SubTitle.vue';
   border-radius: .25rem;
   color: var(--white-color);
 }
-.image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 55%;
-  height: 100%;
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
-  overflow: hidden;
+
+@media (min-width: 768px) {
+  .hero {
+    display: flex;
+    align-items: center;
+    color: var(--dark-color);
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+    overflow: hidden;
+  }
+
+  .hero .content {
+    max-width: 40%;
+    margin-left: 7rem;
+  }
+
 }
 
 @media (min-width: 1400px) {
 
   .hero .content {
-    margin-left: 10rem;
+    margin-left: 15rem;
   }
 }
 </style>
