@@ -20,14 +20,32 @@
             <li>{{ item.baths }} Baths</li>
             <li>{{ item.area }} sqft</li>
           </ul>
-          <a href="#" class="details">View Details →</a>
+          <button @click="openTour(item.virtualTour)" class="virtual-btn">
+            🎥 Virtual Tour
+          </button>
         </div>
+      </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div v-if="tourUrl" class="modal" @click.self="closeTour">
+      <div class="modal-content">
+        <iframe
+          :src="tourUrl"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <button class="close-btn" @click="closeTour">✕</button>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
+const tourUrl = ref(null);
+
 const properties = [
   {
     title: "Emerald Heights Residence",
@@ -37,6 +55,7 @@ const properties = [
     baths: 2,
     area: 1800,
     image: "https://images.unsplash.com/photo-1600585154154-7b5e57a1a4f4?auto=format&fit=crop&w=900&q=80",
+    virtualTour: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
     title: "Palm View Apartment",
@@ -46,6 +65,7 @@ const properties = [
     baths: 2,
     area: 1500,
     image: "https://images.unsplash.com/photo-1600585154526-990dced4df26?auto=format&fit=crop&w=900&q=80",
+    virtualTour: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
     title: "Skyline Penthouse",
@@ -55,8 +75,17 @@ const properties = [
     baths: 3,
     area: 2500,
     image: "https://images.unsplash.com/photo-1600585153931-70e3aa0c291b?auto=format&fit=crop&w=900&q=80",
+    virtualTour: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 ];
+
+function openTour(url) {
+  tourUrl.value = url;
+}
+
+function closeTour() {
+  tourUrl.value = null;
+}
 </script>
 
 <style scoped>
@@ -166,14 +195,62 @@ const properties = [
   padding: 0.6rem 0;
 }
 
-.details {
-  text-decoration: none;
-  color: #00bfa5;
+.virtual-btn {
+  background: #00bfa5;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  color: #fff;
   font-weight: 600;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.details:hover {
-  color: #13443C;
+.virtual-btn:hover {
+  background: #13443C;
+}
+
+/* --- Modal --- */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(19,68,60,0.85);
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  background: #00bfa5;
 }
 </style>
