@@ -40,11 +40,11 @@ const amenities = [
     <div class="container">
       <div class="text-center mb-2">
         <h2 class="section-title">
-        World-Class <span>Amenities</span>
-      </h2>
-      <p class="section-subtitle">
-        Experience the art of fine living with facilities that redefine comfort and convenience.
-      </p>
+          World-Class <span>Amenities</span>
+        </h2>
+        <p class="section-subtitle">
+          Experience the art of fine living with facilities that redefine comfort and convenience.
+        </p>
       </div>
 
       <div class="small-2 large-3 gap-1">

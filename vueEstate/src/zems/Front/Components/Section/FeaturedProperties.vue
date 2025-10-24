@@ -5,7 +5,8 @@
       <p>Explore our most sought-after residences, combining sophistication with comfort.</p>
     </div>
 
-    <div class="property-grid">
+   <div class="container">
+     <div class="property-grid">
       <div v-for="(item, i) in properties" :key="i" class="property-card">
         <div class="image">
           <img :src="item.image" :alt="item.title" />
@@ -26,6 +27,7 @@
         </div>
       </div>
     </div>
+   </div>
 
     <!-- Popup Modal -->
     <div v-if="tourUrl" class="modal" @click.self="closeTour">
@@ -54,7 +56,7 @@ const properties = [
     beds: 3,
     baths: 2,
     area: 1800,
-    image: "https://images.unsplash.com/photo-1600585154154-7b5e57a1a4f4?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
     virtualTour: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
@@ -90,7 +92,7 @@ function closeTour() {
 
 <style scoped>
 .featured {
-  padding: 6rem 8%;
+  padding: 3.75rem 0;
   background: #f9fcfb;
 }
 
