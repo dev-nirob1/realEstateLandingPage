@@ -42,6 +42,7 @@ import SubTitle from '@/components/element/SubTitle.vue';
 .content .sub-title {
   background: #1abc9c;
   width: fit-content;
+  margin: 0 auto;
   padding: .25rem .5rem;
   margin-bottom: .75rem;
   border-radius: .25rem;
@@ -65,7 +66,7 @@ import SubTitle from '@/components/element/SubTitle.vue';
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 }
 
 @media (min-width: 768px) {
@@ -74,7 +75,6 @@ import SubTitle from '@/components/element/SubTitle.vue';
     background: rgb(from var(--primary-color) r g b / 3%);
     color: var(--dark-color);
   }
-
   .container {
     justify-content: flex-start;
   }
@@ -82,7 +82,8 @@ import SubTitle from '@/components/element/SubTitle.vue';
   .content {
     max-width: 350px;
   }
-
+.content .sub-title {
+  margin: .5rem 0;}
   .content p {
     font-size: 1.25rem;
     margin: .75rem 0;
