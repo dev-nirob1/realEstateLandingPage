@@ -24,7 +24,7 @@ import InputField from '@/components/element/InputField.vue';
 
         <div class="form">
           <form>
-            <div class="medium-2 align-center gap-2">
+            <div class="medium-2 align-center gap-1">
               <label for="name">Name
                 <InputField id="name" type="text" placeholder="Enter Your Name" />
               </label>
@@ -62,8 +62,7 @@ import InputField from '@/components/element/InputField.vue';
 }
 
 .form {
-  padding: 2rem;
-  max-width: 90%;
+  padding: 1rem;
   margin: 0 auto;
   border-radius: 1rem;
   background: var(--white-color);
@@ -72,5 +71,13 @@ import InputField from '@/components/element/InputField.vue';
 
 .form .btn {
   background: #cba135;
+}
+
+@media (min-width: 768px) {
+  .form {
+    padding: 2rem;
+    max-width: 90%;
+
+  }
 }
 </style>

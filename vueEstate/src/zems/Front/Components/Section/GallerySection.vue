@@ -1,5 +1,8 @@
 <script setup>
 import BaseButton from '@/components/element/BaseButton.vue';
+import BaseImage from '@/components/element/BaseImage.vue';
+import ImageViewerModal from '@/components/widget/ImageViewerModal.vue';
+import { ref } from 'vue';
 
 const gallery = [
   { src: 'https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870', title: 'Kitchen' },
@@ -9,6 +12,29 @@ const gallery = [
   { src: 'https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1032', title: 'Bedroom' },
   { src: 'https://images.unsplash.com/photo-1560448205-d82bf18b9bcf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870', title: 'Balcony View' },
 ];
+
+const isModalOpen = ref(false)
+const selectedIndex = ref(0)
+
+const handleOpenModal = (imageIndex) => {
+  isModalOpen.value = true;
+  selectedIndex.value = imageIndex;
+}
+const handleCloseModal = () => {
+  isModalOpen.value = false
+}
+const handlePrev = () => {
+  if (selectedIndex.value > 0) {
+    selectedIndex.value -= 1;
+  }
+}
+const handleNext = () => {
+  selectedIndex.value += 1;
+  if (selectedIndex.value === gallery.value.length) {
+    selectedIndex.value = 0;
+    // console.log('selected ', selectedIndex);
+  }
+}
 </script>
 
 <template>
@@ -22,9 +48,17 @@ const gallery = [
       <div v-for="(image, i) in gallery" :key="i" class="masonry-item relative">
         <img :src="image.src" :alt="image.alt" />
         <div class="caption flex-center">{{ image.title }}</div>
-        <BaseButton><i class="fa-solid fa-up-right-and-down-left-from-center"></i></BaseButton>
+        <BaseButton @click="handleOpenModal(i)"><i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+        </BaseButton>
       </div>
     </div>
+
+    <ImageViewerModal :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal" :handleNext="handleNext"
+      :handlePrev="handlePrev">
+      <div class="image">
+        <BaseImage :image="gallery[selectedIndex].src" :alt="gallery[selectedIndex].alt" />
+      </div>
+    </ImageViewerModal>
   </section>
 </template>
 
