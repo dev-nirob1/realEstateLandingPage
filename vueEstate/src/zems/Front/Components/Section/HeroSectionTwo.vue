@@ -4,33 +4,34 @@ import BaseImage from '@/components/element/BaseImage.vue';
 import BaseParagraph from '@/components/element/BaseParagraph.vue';
 import HeroTitle from '@/components/element/HeroTitle.vue';
 import SubTitle from '@/components/element/SubTitle.vue';
-
 </script>
 
 <template>
+
   <section class="hero relative">
-    <div class=" content">
-      <SubTitle>Premium Residence</SubTitle>
-      <HeroTitle>
-        Discover <span>Modern Living</span> <br />
-        in the Heart of the City
-      </HeroTitle>
-      <BaseParagraph>
-        Elevate your lifestyle at Emerald Heights — where architectural brilliance meets natural tranquility.
-      </BaseParagraph>
-      <BaseButton class="bg-primary">Schedule A Visit</BaseButton>
-    </div>
-    <div class="image">
-      <BaseImage image="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=80"
-        alt="hero image" />
+    <div class="container">
+      <div class="content">
+        <SubTitle>Premium Residence</SubTitle>
+        <HeroTitle>
+          Discover <span>Modern Living</span> <br />
+          in the Heart of the City
+        </HeroTitle>
+        <BaseParagraph>
+          Elevate your lifestyle at Emerald Heights — where architectural brilliance meets natural tranquility.
+        </BaseParagraph>
+        <BaseButton class="bg-primary">Schedule A Visit</BaseButton>
+      </div>
+      <div class="image">
+        <BaseImage image="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=80"
+          alt="hero image" />
+      </div>
     </div>
   </section>
-</template>
 
+</template>
 <style scoped>
 .hero {
-  min-height: 100vh;
-  background: rgb(from var(--primary-color) r g b / 3%);
+  text-align: center;
   color: var(--white-color);
 }
 
@@ -42,38 +43,70 @@ import SubTitle from '@/components/element/SubTitle.vue';
   background: #1abc9c;
   width: fit-content;
   padding: .25rem .5rem;
+  margin-bottom: .75rem;
   border-radius: .25rem;
   color: var(--white-color);
 }
 
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+
 @media (min-width: 768px) {
   .hero {
-    display: flex;
-    align-items: center;
+    text-align: left;
+    background: rgb(from var(--primary-color) r g b / 3%);
     color: var(--dark-color);
+  }
+
+  .container {
+    justify-content: flex-start;
+  }
+
+  .content {
+    max-width: 350px;
+  }
+
+  .content p {
+    font-size: 1.25rem;
+    margin: .75rem 0;
   }
 
   .image {
     position: absolute;
     top: 0;
     right: 0;
+    left: auto;
     width: 55%;
     height: 100%;
     clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
     overflow: hidden;
   }
 
-  .hero .content {
-    max-width: 40%;
-    margin-left: 7rem;
+  .image::after {
+    background: none;
   }
-
 }
 
-@media (min-width: 1400px) {
-
-  .hero .content {
-    margin-left: 15rem;
+@media (min-width: 992px) {
+  .content {
+    max-width: 50%;
   }
 }
 </style>
