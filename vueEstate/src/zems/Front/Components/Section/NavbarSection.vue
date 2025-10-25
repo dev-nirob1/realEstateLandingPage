@@ -47,7 +47,7 @@ onMounted(() => {
             <a href="#contact">Contact</a>
           </ListItem>
           <ListItem>
-            <i class="fa-solid fa-phone"></i> +8801234567890
+            <i class="fa-solid fa-phone text-secondary"></i> +8801234567890
           </ListItem>
         </ul>
 

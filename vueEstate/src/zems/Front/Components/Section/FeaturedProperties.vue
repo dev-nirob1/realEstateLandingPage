@@ -49,7 +49,7 @@ const properties = [
 
 </script>
 <template>
-  <section class="featured">
+  <section class="featured bg-light">
     <div class="title text-center mb-2">
       <h2>Featured <span>Properties</span></h2>
       <p>Explore our most sought-after residences, combining sophistication with comfort.</p>
@@ -83,7 +83,6 @@ const properties = [
 <style scoped>
 .featured {
   padding: 3.75rem 0;
-  background: #f9fcfb;
 }
 
 .property-card {

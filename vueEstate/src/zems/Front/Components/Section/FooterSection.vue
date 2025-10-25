@@ -78,6 +78,9 @@ import SubTitle from '@/components/element/SubTitle.vue';
   color: var(--dark-color);
 
 }
+.footer i {
+  color: var(--secondary-color);
+}
 
 .footer .logo img {
   height: 70px;
@@ -88,6 +91,7 @@ import SubTitle from '@/components/element/SubTitle.vue';
   display: flex;
   gap: 1rem;
   font-size: 1.5rem;
+
 }
 
 .footer .social-links a {
@@ -95,6 +99,7 @@ import SubTitle from '@/components/element/SubTitle.vue';
   background: var(--white-color);
   color: var(--primary-color);
   padding: 0 .75rem;
+  border: 1px solid var(--border-color);
 }
 
 .footer .sub-title {
@@ -110,7 +115,7 @@ import SubTitle from '@/components/element/SubTitle.vue';
   bottom: 0;
   height: 2px;
   width: 50px;
-  background: var(--primary-color);
+  background: var(--secondary-color);
 }
 
 .footer ul li {
@@ -152,12 +157,17 @@ import SubTitle from '@/components/element/SubTitle.vue';
   background: var(--white-color);
   border-radius: .25rem 0 0 .25rem;
   margin: 0;
+  border: 1px solid var(--primary-color);
 }
 
 .footer .newsletter-form .btn {
   padding: 1rem 2rem;
   background: var(--primary-color);
   border-radius: 0 .25rem .25rem 0;
+  margin: 0;
+}
+.footer .newsletter-form .btn i{
+  color: var(--white-color);
 }
 
 .footer-bottom {

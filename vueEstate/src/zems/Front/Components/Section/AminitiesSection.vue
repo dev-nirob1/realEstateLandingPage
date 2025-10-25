@@ -47,7 +47,7 @@ const amenities = [
         </p>
       </div>
 
-      <div class="small-2 large-3 gap-1">
+      <div class="small-2 large-3 gap-2">
         <div class="amenity-card relative" v-for="(item, i) in amenities" :key="i">
           <div class="icon">
             <i :class="item.icon" class="fa-3x"></i>
@@ -74,7 +74,7 @@ const amenities = [
 }
 
 .amenity-card .icon {
-  color: #1abc9c;
+  color: var(--secondary-color);
   margin-bottom: .75rem;
 }
 
@@ -83,6 +83,6 @@ const amenities = [
 }
 
 .amenity-card:hover {
-  border-top: 2px solid #1abc9c;
+  border-top: 2px solid var(--secondary-color);
 }
 </style>

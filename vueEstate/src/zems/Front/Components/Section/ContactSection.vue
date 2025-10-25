@@ -38,7 +38,7 @@ import InputField from '@/components/element/InputField.vue';
             <label for="message"> Message
               <BaseTextArea rows="6" id="message" placeholder="Enter Message..."></BaseTextArea>
             </label>
-            <BaseButton>
+            <BaseButton class="bg-highlight">
               Send Message</BaseButton>
           </form>
         </div>
@@ -57,7 +57,7 @@ import InputField from '@/components/element/InputField.vue';
 }
 
 .contact ul li span {
-  color: #cba135;
+  color: var(--accent-color);
   font-weight: bold;
 }
 
@@ -69,9 +69,6 @@ import InputField from '@/components/element/InputField.vue';
   color: var(--light-color);
 }
 
-.form .btn {
-  background: #cba135;
-}
 
 @media (min-width: 768px) {
   .form {

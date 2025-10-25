@@ -48,6 +48,7 @@ defineProps({
 .modal {
   position: relative;
 }
+
 .modal .modal-content {
   position: fixed;
   top: 0;
@@ -57,10 +58,12 @@ defineProps({
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 999;
 }
+
 .modal .btn {
   position: fixed;
   background: var(--secondary-color);
   color: var(--white-color);
+  padding: .75rem;
   border-radius: .25rem;
   border: none;
 }
@@ -70,25 +73,31 @@ defineProps({
   top: 50%;
   transform: translateY(-50%);
 }
+
 .modal .btn-prev {
   left: 1rem;
 }
+
 .modal .btn-next {
   right: 1rem;
 }
+
 .modal .close-btn {
   position: fixed;
   top: 1rem;
   right: 1rem;
 }
+
 .modal .modal-details {
   height: 70vh;
   width: 80vw;
 }
+
 .modal .modal-details .image {
   height: 100%;
   width: 100%;
 }
+
 .modal .modal-details img {
   width: 100%;
   height: 100%;
