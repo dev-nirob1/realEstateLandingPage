@@ -75,6 +75,7 @@ import SubTitle from '@/components/element/SubTitle.vue';
     background: rgb(from var(--primary-color) r g b / 3%);
     color: var(--dark-color);
   }
+
   .container {
     justify-content: flex-start;
   }
@@ -82,8 +83,11 @@ import SubTitle from '@/components/element/SubTitle.vue';
   .content {
     max-width: 350px;
   }
-.content .sub-title {
-  margin: .5rem 0;}
+
+  .content .sub-title {
+    margin: .5rem 0;
+  }
+
   .content p {
     font-size: 1.25rem;
     margin: .75rem 0;

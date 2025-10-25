@@ -5,38 +5,34 @@
       <p>Explore our most sought-after residences, combining sophistication with comfort.</p>
     </div>
 
-   <div class="container">
-     <div class="property-grid">
-      <div v-for="(item, i) in properties" :key="i" class="property-card">
-        <div class="image">
-          <img :src="item.image" :alt="item.title" />
-          <div class="price-tag">${{ item.price.toLocaleString() }}</div>
-        </div>
+    <div class="container">
+      <div class="property-grid">
+        <div v-for="(item, i) in properties" :key="i" class="property-card">
+          <div class="image">
+            <img :src="item.image" :alt="item.title" />
+            <div class="price-tag">${{ item.price.toLocaleString() }}</div>
+          </div>
 
-        <div class="info">
-          <h3>{{ item.title }}</h3>
-          <p class="location">📍 {{ item.location }}</p>
-          <ul class="features">
-            <li>{{ item.beds }} Beds</li>
-            <li>{{ item.baths }} Baths</li>
-            <li>{{ item.area }} sqft</li>
-          </ul>
-          <button @click="openTour(item.virtualTour)" class="virtual-btn">
-            🎥 Virtual Tour
-          </button>
+          <div class="info">
+            <h3>{{ item.title }}</h3>
+            <p class="location">📍 {{ item.location }}</p>
+            <ul class="features">
+              <li>{{ item.beds }} Beds</li>
+              <li>{{ item.baths }} Baths</li>
+              <li>{{ item.area }} sqft</li>
+            </ul>
+            <button @click="openTour(item.virtualTour)" class="virtual-btn">
+              🎥 Virtual Tour
+            </button>
+          </div>
         </div>
       </div>
     </div>
-   </div>
 
     <!-- Popup Modal -->
     <div v-if="tourUrl" class="modal" @click.self="closeTour">
       <div class="modal-content">
-        <iframe
-          :src="tourUrl"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
+        <iframe :src="tourUrl" frameborder="0" allowfullscreen></iframe>
         <button class="close-btn" @click="closeTour">✕</button>
       </div>
     </div>
@@ -216,7 +212,7 @@ function closeTour() {
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0, 0, 0, 0.65);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,7 +237,7 @@ function closeTour() {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(19,68,60,0.85);
+  background: rgba(19, 68, 60, 0.85);
   color: #fff;
   border: none;
   font-size: 1.2rem;
