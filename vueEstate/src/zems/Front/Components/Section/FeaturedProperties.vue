@@ -4,7 +4,16 @@ import BaseImage from '@/components/element/BaseImage.vue';
 import BaseParagraph from '@/components/element/BaseParagraph.vue';
 import ListItem from '@/components/element/ListItem.vue';
 import SubTitle from '@/components/element/SubTitle.vue';
+import VideoPlayModal from '@/components/widget/VideoPlayModal.vue';
+import { ref } from 'vue';
+const isModalOpen = ref(false)
 
+const handleOpenModal = () => {
+  isModalOpen.value = true
+}
+const handleCloseModal = () => {
+  isModalOpen.value = false
+}
 const properties = [
   {
     title: "Emerald Heights Residence",
@@ -62,11 +71,12 @@ const properties = [
               <ListItem><i class="fa-solid fa-bath"></i> {{ data.baths }} bath</ListItem>
               <ListItem><i class="fa-solid fa-maximize"></i> {{ data.area }} sqft</ListItem>
             </ul>
-            <BaseButton class="bg-primary">View Details</BaseButton>
+            <BaseButton @click="handleOpenModal" class="bg-primary">View Details</BaseButton>
           </div>
         </div>
       </div>
     </div>
+    <VideoPlayModal :isModalOpen="isModalOpen" :handleCloseModal="handleCloseModal" />
   </section>
 </template>
 
@@ -83,9 +93,11 @@ const properties = [
   border-radius: 1rem;
   background-color: var(--white-color);
 }
+
 .property-card p {
   margin: .5rem 0;
 }
+
 .card-body {
   padding: 1rem;
 }
